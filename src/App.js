@@ -7,7 +7,7 @@ import {Results} from './components/Results';
 import {PopularItems} from './components/PopularItems';
 import { ItemOverview } from './components/ItemOverview';
 
-const resource = fetchData();
+const resource = fetchData(); 
 
 function App() {
   const apikey = "5042d9bd250e2fbd1f65fceff13e225d";
@@ -16,7 +16,7 @@ function App() {
     selected:{}
   })
 
-  
+
 
   const handleInput = (e) => {
     axios('https://api.themoviedb.org/3/search/multi?api_key='
