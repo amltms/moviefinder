@@ -1,5 +1,5 @@
 import React from 'react'
-import {Results} from './Results';
+import {ItemList} from './ItemList';
 import {fetchData}  from '../Api';
 
 const resource = fetchData();
@@ -7,6 +7,6 @@ const resource = fetchData();
 export const PopularItems = () => {
     const items = resource.popularItems.read();
     return (
-        <Results results={items.results}></Results>
+        <ItemList results={items.results}></ItemList>
     )
 }

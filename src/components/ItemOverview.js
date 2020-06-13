@@ -4,13 +4,13 @@ import {fetchData}  from '../Api';
 const resource = fetchData();
 
 export const ItemOverview = () => {
-    const movie = resource.movie.read();
+    const selected = resource.movie.read();
     return(
       <div>
-        <li>{movie.title}</li>
-        <li>{movie.release_date}</li>
-        <li>{movie.vote_average}</li>
-        <li>{movie.overview}</li>
+        <li>{selected.title}</li>
+        <li>{selected.release_date}</li>
+        <li>{selected.vote_average}</li>
+        <li>{selected.overview}</li>
       </div>
     )
 }

@@ -56,9 +56,9 @@ const fetchPopularItems = () => {
     
 }
 
-const fetchItems = (search) => {
+const fetchItems = (id) => {
   console.log('Fetching items');
-  return axios.get('https://api.themoviedb.org/3/search/multi?api_key='+apikey+'&language=en-UK&query='+search+'&page=1&include_adult=false')
+  return axios.get('https://api.themoviedb.org/3/search/multi?api_key='+apikey+'&language=en-UK&query='+id+'&page=1&include_adult=false')
   .then(res => res.data)
   .catch(err => console.log(err))
   
