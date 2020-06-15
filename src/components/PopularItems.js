@@ -4,9 +4,9 @@ import {fetchData}  from '../Api';
 
 const resource = fetchData();
 
-export const PopularItems = () => {
+export const PopularItems = ({selectedItem}) => {
     const items = resource.popularItems.read();
     return (
-        <ItemList results={items.results}></ItemList>
+        <ItemList results={items.results} selectedItem={selectedItem}></ItemList>
     )
 }

@@ -1,16 +1,17 @@
 import React from 'react'
-import {fetchData}  from '../Api';
 
-const resource = fetchData();
-
-export const ItemOverview = () => {
-    const selected = resource.movie.read();
+export const ItemOverview = ({selectedItem}) => {
+  if(selectedItem.length !== 0){  
+    const item = selectedItem.item.read();
     return(
       <div>
-        <li>{selected.title}</li>
-        <li>{selected.release_date}</li>
-        <li>{selected.vote_average}</li>
-        <li>{selected.overview}</li>
+        <li>{item.title}</li>
+        <li>{item.release_date}</li>
+        <li>{item.vote_average}</li>
+        <li>{item.overview}</li>
       </div>
     )
+  }
+  return null;
+
 }
