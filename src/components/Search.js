@@ -1,18 +1,17 @@
-import React from 'react';
-import axios from 'axios';
+import React, {useState} from 'react';
+import {fetchData}  from '../Api';
 
+const initialResource = fetchData();
 export const Search = props => {
-    const apikey = "5042d9bd250e2fbd1f65fceff13e225d";
+    const [resource, setResource] = useState(initialResource);
     
     const handleInput = (e) => {
-        axios('https://api.themoviedb.org/3/search/multi?api_key='
-        +apikey
-        +'&language=en-UK&query='
-        +e.target.value
-        +'&page=1&include_adult=false').then(({data}) => {
-          props.onChange(data.results)
-        });
-      }
+      setResource(fetchData(e.target.value));
+      const searchResult = resource.search.read();
+      console.log(searchResult.results);
+      props.onChange(searchResult.results)
+
+    }
     
     return (
         <section className="searchbox=wrap">

@@ -5,7 +5,7 @@ export const ItemOverview = ({selectedItem}) => {
     const item = selectedItem.item.read();
     return(
       <div>
-        <li>{item.title}</li>
+        <li>{item.original_title}</li>
         <li>{item.release_date}</li>
         <li>{item.vote_average}</li>
         <li>{item.overview}</li>

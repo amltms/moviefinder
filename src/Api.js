@@ -4,7 +4,7 @@ const apikey = "5042d9bd250e2fbd1f65fceff13e225d";
 export function fetchData(id) {
   let itemPromise = fetchItem(id);
   let popularItemsPromise = fetchPopularItems();
-  let searchPromise = fetchSearch();
+  let searchPromise = fetchSearch(id);
   return {
     popularItems: wrapPromise(popularItemsPromise),
     item: wrapPromise(itemPromise),
