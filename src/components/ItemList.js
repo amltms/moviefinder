@@ -5,7 +5,7 @@ export const ItemList = ({results, selectedItem}) => {
     return (
         <section className="item-container">
             {results.map(item =>(
-                <Item key={item.id} item={item} selectedItem={selectedItem}/>
+               item.poster_path &&<Item key={item.id} item={item} selectedItem={selectedItem}/>
             ))}
         </section>
     )

@@ -6,10 +6,12 @@ export const Search = props => {
     const [resource, setResource] = useState(initialResource);
     
     const handleInput = (e) => {
-      setResource(fetchData(e.target.value));
-      const searchResult = resource.search.read();
-      console.log(searchResult.results);
-      props.onChange(searchResult.results)
+        if (e.target.value) {
+            setResource(fetchData(e.target.value));
+            const searchResult = resource.search.read();
+            console.log(searchResult.results);
+            props.onChange(searchResult.results)
+        }
 
     }
     

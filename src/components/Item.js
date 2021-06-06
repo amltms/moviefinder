@@ -1,8 +1,5 @@
 import React from 'react';
 
-
-
-
 export const Item = ({item, selectedItem, props}) => {
     return (
         <div key={item.id} className="item" onClick={() => selectedItem(item.id)}>

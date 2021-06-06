@@ -55,7 +55,7 @@ export function fetchItem(id) {
 
 const fetchSearch = (id) => {
   console.log('Fetching searched item');
-  return axios.get('https://api.themoviedb.org/3/search/multi?api_key='+apikey+'&language=en-UK&query='+id+'&page=1&include_adult=false')
+  return axios.get('https://api.themoviedb.org/3/search/movie?api_key='+apikey+'&language=en-UK&query='+id+'&page=1&include_adult=false')
   .then(res => res.data)
   .catch(err => console.log(err))
   
